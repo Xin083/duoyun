@@ -1,0 +1,21 @@
+.el-loading-spinner {
+    background-image: url('https://qiniu.maoye.vip/aixin/maomiloading.gif') !important;
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    height: 200px;
+    width: 100%;
+    background-position: center;
+    top: 40%;
+}
+
+.el-loading-spinner .circular {/*隐藏 默认的 loading 动画*/
+    display: none !important;
+}
+
+.el-loading-spinner .el-loading-text{
+    margin-top: 100px !important;
+}
+
+.el-icon-loading:before{/*隐藏 默认的 loading 动画*/
+    display: none !important;
+}
