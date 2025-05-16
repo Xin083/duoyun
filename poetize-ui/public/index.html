@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="./kl01.jpg" sizes="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>我是云朵呀~</title>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.8/clipboard.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qiniu-js/3.4.0/qiniu.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        /*鼠标指针样式*/
+        html,body{
+            cursor: url('sb02.png'),auto;
+        }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+<span class="container"></span>
+</body>
+<script>
+    /*
+    * Emoji Cursor.js
+    * - 90's cursors collection
+    */
+    (function emojiCursor(){var m=["🌺","🌺","🌺","🌺"];var o=window.innerWidth;var e=window.innerHeight;var d={x:o/2,y:o/2};var l=[];function f(){c();g()}function c(){document.addEventListener("mousemove",h);document.addEventListener("touchmove",i);document.addEventListener("touchstart",i);window.addEventListener("resize",j)}function j(p){o=window.innerWidth;e=window.innerHeight}function i(p){if(p.touches.length>0){for(var q=0;q<p.touches.length;q++){a(p.touches[q].clientX,p.touches[q].clientY,m[Math.floor(Math.random()*m.length)])}}}function h(p){d.x=p.clientX;d.y=p.clientY;a(d.x,d.y,m[Math.floor(Math.random()*m.length)])}function a(r,s,p){var q=new k();q.init(r,s,p);l.push(q)}function n(){for(var p=0;p<l.length;p++){l[p].update()}for(var p=l.length-1;p>=0;p--){if(l[p].lifeSpan<0){l[p].die();l.splice(p,1)}}}function g(){requestAnimationFrame(g);n()}function k(){this.lifeSpan=120;this.initialStyles={position:"fixed",top:"0",display:"block",pointerEvents:"none","z-index":"10000000",fontSize:"24px","will-change":"transform"};this.init=function(q,r,p){this.velocity={x:(Math.random()<0.5?-1:1)*(Math.random()/2),y:1};this.position={x:q-10,y:r-20};this.element=document.createElement("span");this.element.innerHTML=p;b(this.element,this.initialStyles);this.update();document.body.appendChild(this.element)};this.update=function(){this.position.x+=this.velocity.x;this.position.y+=this.velocity.y;this.lifeSpan--;this.element.style.transform="translate3d("+this.position.x+"px,"+this.position.y+"px,0) scale("+(this.lifeSpan/120)+")"};this.die=function(){this.element.parentNode.removeChild(this.element)}}function b(r,q){for(var p in q){r.style[p]=q[p]}}f()})();
+</script>
+<script>
+    new WOW().init();
+</script>
+</html>

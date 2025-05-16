@@ -1,0 +1,88 @@
+server:
+  port: 8081
+  tomcat:
+    threads.max: 50
+    max-connections: 100
+    max-http-form-post-size: 120MB
+    connection-timeout: 60000
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+  mail:
+    host: smtp.qq.com
+    username: 373074501@qq.com
+    password: cidorpqvohvrcbad
+    default-encoding: utf-8
+    protocol: smtp
+    port: 465
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+          ssl:
+            enable: true
+
+  datasource:
+    username: root
+    password: 12345678
+    url: jdbc:mysql://localhost:3306/poetize_test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    #url: jdbc:mysql://192.168.1.1:3306/blog_yaomei?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+user:
+  code:
+    format: 【yunduo.me】%s为本次验证的验证码，请在5分钟内完成验证。为保证账号安全，请勿泄漏此验证码。
+#    format: 【yunduo.me】%s为本次验证的验证码，请在5分钟内完成验证。为保证账号安全，请勿泄漏此验证码。
+  subscribe:
+    format: 【yunduo.me】您订阅的专栏【%s】新增一篇文章：%s。
+
+store:
+  type: local
+
+#local:
+#  enable: true
+#  uploadUrl: F:/home/20240111/poetize/src/main/resources/static/
+#  downloadUrl: http://localhost:8081/
+#resources:
+#  static-locations: file:F:/home/20240111/poetize/src/main/resources/static/
+local:
+  enable: true
+#  uploadUrl: http://127.0.0.1:8081/static/
+  uploadUrl: /Users/leixin/Desktop/personel house/maoyes-blog/poetize-server/src/main/resources/static/
+#  uploadUrl: /www/wwwroot/yunduo.me/data/
+  downloadUrl: http://127.0.0.1:8081/
+#  downloadUrl: http://yunduo.me/static/
+resources:
+  static-locations: file:/Users/leixin/Desktop/personel house/maoyes-blog/poetize-server/src/main/resources/static/
+#  static-locations: http://127.0.0.1:8081/static/
+
+#local:
+#  enable: true
+#  uploadUrl: http://192.168.31.190:8082/static/
+#  downloadUrl: http://192.168.31.190:8082/
+#resources:
+#  static-locations: http://192.168.31.190:8082/static/
+qiniu:
+  enable: false
+  #【七牛accessKey】
+  accessKey: 0JM7jKvGw_AyGZUd5u07AMwsDH4qqAyYfb12KeKd
+  #【七牛secretKey】
+  secretKey: X13QaabUsa3OClR1ViMnze3pxXbEVLIGvBqsBXas
+  bucket: 373074501
+  downloadUrl: https://api.youduo.me/
