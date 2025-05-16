@@ -17,3 +17,6 @@ bin-release/
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
 poetize-server/target/
+poetize-server/src/main/resources/static/video/video.mp4
+poetize-server/src/main/resources/static/video/video2.mp4
+poetize-server/src/main/resources/static/video/video1.mp4
